@@ -53,4 +53,4 @@ The output lists passed and failed checks, and any skipped modules.
 
 ## License
 
-No license has been specified yet.
+This project is licensed under the MIT License - see the LICENSE file for details.
