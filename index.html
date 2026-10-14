@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tic-Tac-Toe: Minimax vs Alpha-Beta</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <h1>Tic-Tac-Toe</h1>
+      <p class="subtitle">Standard Minimax vs Alpha-Beta Pruning: same move, less search.</p>
+    </header>
+
+    <noscript><p class="noscript">This demo needs JavaScript. Enable it and reload the page.</p></noscript>
+
+    <section class="controls" aria-label="Game settings">
+      <label>Mode
+        <select id="mode">
+          <option value="pvai">Player vs AI</option>
+          <option value="pvp">Player vs Player</option>
+        </select>
+      </label>
+      <label>Moves first
+        <select id="first">
+          <option value="human">You (X)</option>
+          <option value="ai">AI (O)</option>
+        </select>
+      </label>
+      <label>AI algorithm
+        <select id="algo">
+          <option value="minimax">Standard Minimax</option>
+          <option value="alphabeta">Alpha-Beta Pruning</option>
+        </select>
+      </label>
+      <div class="buttons">
+        <button type="button" id="reset">New Game</button>
+        <button type="button" id="compare">Compare</button>
+        <button type="button" id="reset-scores" class="quiet">Reset Scores</button>
+      </div>
+    </section>
+
+    <div class="play">
+      <section class="board-area" aria-label="Board">
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+        <div id="board" class="board"></div>
+        <dl class="scoreboard" aria-label="Scoreboard">
+          <div><dt id="label-x">X wins</dt><dd id="score-x">0</dd></div>
+          <div><dt id="label-o">O wins</dt><dd id="score-o">0</dd></div>
+          <div><dt>Draws</dt><dd id="score-draw">0</dd></div>
+        </dl>
+      </section>
+
+      <div class="panels">
+        <section class="panel" aria-labelledby="last-title">
+          <h2 id="last-title">Last AI move</h2>
+          <div id="last-move"></div>
+        </section>
+
+        <section class="panel" aria-labelledby="summary-title">
+          <h2 id="summary-title">This Game</h2>
+          <div id="summary"></div>
+        </section>
+
+        <section class="panel" aria-labelledby="compare-title">
+          <h2 id="compare-title">Compare</h2>
+          <div id="compare-result"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script src="game.js"></script>
+  <script src="minimax.js"></script>
+  <script src="alphabeta.js"></script>
+  <script src="metrics.js"></script>
+  <script src="ui.js"></script>
+  <script src="main.js"></script>
+  <script>App.start();</script>
+</body>
+</html>
