@@ -1,16 +1,36 @@
 name: CI
 on:
   push:
+    branches: [main]
   pull_request:
 jobs:
   test:
+    name: Test and build (Node ${{ matrix.node }})
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [20, 22]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: ${{ matrix.node }}
           cache: npm
       - run: npm ci
       - run: npm test
       - run: npm run build
+
+  docker:
+    name: Docker images
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build server image
+        run: docker build -f server/Dockerfile -t ttt-server .
+      - name: Build client image
+        run: docker build -f client/Dockerfile -t ttt-client .
+      - name: Smoke-test the server image
+        run: |
+          docker run -d --name ttt -p 3001:3001 -e JWT_SECRET=ci-secret ttt-server
+          for i in $(seq 1 20); do curl -fs http://localhost:3001/health && exit 0; sleep 1; done
+          docker logs ttt; exit 1

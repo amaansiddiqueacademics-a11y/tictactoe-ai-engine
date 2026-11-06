@@ -3,10 +3,36 @@
   "version": "2.0.0",
   "private": true,
   "description": "Real-time Tic-Tac-Toe with a Minimax vs Alpha-Beta AI engine, online rooms and an algorithm explorer.",
+  "keywords": [
+    "tic-tac-toe",
+    "minimax",
+    "alpha-beta-pruning",
+    "game-ai",
+    "react",
+    "socket.io"
+  ],
+  "author": "Amaan Siddique <amaan.siddique.academics@gmail.com>",
+  "contributors": [
+    "Sairaj (https://github.com/srkhandagale1601-del)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amaansiddiqueacademics-a11y/tictactoe-ai-engine.git"
+  },
+  "homepage": "https://github.com/amaansiddiqueacademics-a11y/tictactoe-ai-engine#readme",
+  "bugs": {
+    "url": "https://github.com/amaansiddiqueacademics-a11y/tictactoe-ai-engine/issues"
+  },
   "license": "MIT",
   "type": "module",
-  "engines": { "node": ">=20" },
-  "workspaces": ["shared", "server", "client"],
+  "engines": {
+    "node": ">=20"
+  },
+  "workspaces": [
+    "shared",
+    "server",
+    "client"
+  ],
   "scripts": {
     "dev": "concurrently -k -n server,client -c cyan,magenta \"npm run dev -w server\" \"npm run dev -w client\"",
     "build": "npm run build -w client && npm run build -w server",

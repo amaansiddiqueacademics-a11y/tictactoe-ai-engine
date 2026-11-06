@@ -1,4 +1,20 @@
-# Tic-Tac-Toe AI Engine: Minimax vs Alpha-Beta
+<div align="center">
+
+# Tic-Tac-Toe AI Engine
+
+**Minimax vs Alpha-Beta pruning: same move, a fraction of the search.**
+
+[![CI](https://github.com/amaansiddiqueacademics-a11y/tictactoe-ai-engine/actions/workflows/ci.yml/badge.svg)](https://github.com/amaansiddiqueacademics-a11y/tictactoe-ai-engine/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Node.js](https://img.shields.io/badge/Node.js-%E2%89%A520-339933?logo=nodedotjs&logoColor=white)](https://nodejs.org)
+[![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![Socket.IO](https://img.shields.io/badge/Socket.IO-4-010101?logo=socketdotio&logoColor=white)](https://socket.io)
+[![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker&logoColor=white)](docker-compose.yml)
+
+![Playing the AI with live search metrics](docs/screenshots/play.jpg)
+
+</div>
 
 A real-time Tic-Tac-Toe game built around one question: **how much search does Alpha-Beta pruning save over plain Minimax?** Both algorithms always pick the same optimal move; the app plays the game and measures the difference on every AI turn.
 
@@ -7,6 +23,12 @@ It runs three ways from the same code:
 - **On this device**: vs the AI or pass-and-play, entirely in the browser. No server needed.
 - **Online**: create a room, share the 6-character code, play a friend in real time (React + Socket.IO), or play the AI with moves validated on the server.
 - **Algorithm explorer**: an animated minimax walkthrough and a live sandbox that scores every cell, with a pruning toggle.
+
+## Screenshots
+
+| Watch the AI think | Live sandbox with pruning toggle | Online room on a phone |
+|---|---|---|
+| ![Animated minimax tree](docs/screenshots/explorer-tree.jpg) | ![Sandbox scoring every cell](docs/screenshots/explorer-sandbox.jpg) | ![Online friend match](docs/screenshots/mobile-online.jpg) |
 
 ## Features
 
@@ -131,6 +153,15 @@ Socket.IO events (client → server, each acknowledged with `{ ok, game?, error?
 - Guest identities only: no accounts, rankings or matchmaking.
 - In-memory rooms are lost on restart and don't work across several server instances; use Redis for that.
 - The AI search runs on the server's event loop. A full Minimax from the empty board takes about 50 ms, which is fine for a classroom-scale deployment but would need a worker pool at large scale.
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md). Changes are listed in [CHANGELOG.md](CHANGELOG.md); security notes are in [SECURITY.md](SECURITY.md).
+
+## Authors
+
+- **Amaan Siddique** ([@amaansiddiqueacademics-a11y](https://github.com/amaansiddiqueacademics-a11y)): Minimax / Alpha-Beta engine, metrics and tests
+- **Sairaj** ([@srkhandagale1601-del](https://github.com/srkhandagale1601-del)): full-stack multiplayer version and algorithm explorer ([original repo](https://github.com/srkhandagale1601-del/tic-tac-toe))
 
 ## License
 
