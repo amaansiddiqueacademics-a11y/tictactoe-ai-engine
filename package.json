@@ -1,0 +1,21 @@
+{
+  "name": "tictactoe-ai-engine",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Real-time Tic-Tac-Toe with a Minimax vs Alpha-Beta AI engine, online rooms and an algorithm explorer.",
+  "license": "MIT",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "workspaces": ["shared", "server", "client"],
+  "scripts": {
+    "dev": "concurrently -k -n server,client -c cyan,magenta \"npm run dev -w server\" \"npm run dev -w client\"",
+    "build": "npm run build -w client && npm run build -w server",
+    "start": "npm start -w server",
+    "test": "npm test -w shared && npm test -w server",
+    "typecheck": "npm run typecheck -w client",
+    "loadtest": "npm run loadtest -w server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

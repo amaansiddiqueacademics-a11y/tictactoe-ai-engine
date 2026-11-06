@@ -1,0 +1,11 @@
+{
+  "name": "@ttt/engine",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "main": "engine.js",
+  "types": "engine.d.ts",
+  "scripts": {
+    "test": "node --test"
+  }
+}
