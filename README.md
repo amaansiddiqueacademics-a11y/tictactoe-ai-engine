@@ -162,6 +162,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). Changes are listed in [CHANGELOG.md](CHA
 
 - **Amaan Siddique** ([@amaansiddiqueacademics-a11y](https://github.com/amaansiddiqueacademics-a11y)): Minimax / Alpha-Beta engine, metrics and tests
 - **Sairaj** ([@srkhandagale1601-del](https://github.com/srkhandagale1601-del)): full-stack multiplayer version and algorithm explorer ([original repo](https://github.com/srkhandagale1601-del/tic-tac-toe))
+- **Abdul Hakim Shaikh** ([@HakimK438](https://github.com/HakimK438)): contributor
 
 ## License
 
